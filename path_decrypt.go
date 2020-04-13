@@ -13,6 +13,7 @@ import (
 )
 
 func (b *backend) pathDecrypt() *framework.Path {
+	fmt.Println("This is test on 4/13/2020 pathDecrypt()")
 	return &framework.Path{
 		Pattern: "decrypt/" + framework.GenericNameRegex("key"),
 
@@ -69,6 +70,7 @@ correct version automatically.
 // pathDecryptWrite corresponds to PUT/POST gcpkms/decrypt/:key and is
 // used to decrypt the ciphertext string using the named key.
 func (b *backend) pathDecryptWrite(ctx context.Context, req *logical.Request, d *framework.FieldData) (*logical.Response, error) {
+	fmt.Println("This is test on 4/13/2020 pathDecryptWrite()")
 	key := d.Get("key").(string)
 	aad := d.Get("additional_authenticated_data").(string)
 	keyVersion := d.Get("key_version").(int)

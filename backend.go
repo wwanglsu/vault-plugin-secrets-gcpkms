@@ -2,6 +2,7 @@ package gcpkms
 
 import (
 	"context"
+	"fmt"
 	"sync"
 	"time"
 
@@ -85,7 +86,7 @@ func Backend() *backend {
 		Invalidate: b.invalidate,
 		Clean:      b.clean,
 	}
-
+	fmt.Println("This is test on 4/13/2020 Backend()")
 	return &b
 }
 

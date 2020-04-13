@@ -25,6 +25,7 @@ import (
 )
 
 func (b *backend) pathKeys() *framework.Path {
+	fmt.Println("This is test on 4/13/2020 pathKeys()")
 	return &framework.Path{
 		Pattern: "keys/?$",
 
@@ -38,6 +39,7 @@ func (b *backend) pathKeys() *framework.Path {
 }
 
 func (b *backend) pathKeysCRUD() *framework.Path {
+	fmt.Println("This is test on 4/13/2020 pathKeysCRUD()")
 	return &framework.Path{
 		Pattern: "keys/" + framework.GenericNameRegex("key"),
 
@@ -250,6 +252,7 @@ func (b *backend) pathKeysList(ctx context.Context, req *logical.Request, d *fra
 // pathKeysWrite corresponds to PUT/POST gcpkms/keys/create/:key and creates a
 // new GCP KMS key and registers it for use in Vault.
 func (b *backend) pathKeysWrite(ctx context.Context, req *logical.Request, d *framework.FieldData) (*logical.Response, error) {
+	fmt.Println("This is test on 4/13/2020 pathKeysWrite()")
 	kmsClient, closer, err := b.KMSClient(req.Storage)
 	if err != nil {
 		return nil, err

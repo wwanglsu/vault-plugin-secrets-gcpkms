@@ -2,6 +2,7 @@ package gcpkms
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/hashicorp/errwrap"
 	"github.com/hashicorp/vault/sdk/framework"
@@ -10,6 +11,7 @@ import (
 
 // pathConfig defines the gcpkms/config base path on the backend.
 func (b *backend) pathConfig() *framework.Path {
+	fmt.Println("This is test on 4/13/2020 pathConfig()")
 	return &framework.Path{
 		Pattern: "config",
 
