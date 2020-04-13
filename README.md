@@ -81,7 +81,7 @@ instructions are only useful if you want to develop against the plugin.**
 
     ```text
     $ vault server -dev -dev-plugin-dir=./bin
-    $ vault secrets enable -path=gcpkms -plugin=vault-plugin-secrets-gcpkms plugin
+    $ vault secrets enable -path=gcpkms -plugin-name=vault-plugin-secrets-gcpkms plugin
     ```
 
 ### Documentation

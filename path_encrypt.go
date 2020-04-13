@@ -14,6 +14,7 @@ import (
 )
 
 func (b *backend) pathEncrypt() *framework.Path {
+	fmt.Println("This is test on 4/13/2020 pathEncrypt()")
 	return &framework.Path{
 		Pattern: "encrypt/" + framework.GenericNameRegex("key"),
 
@@ -68,6 +69,7 @@ limitations by key types.
 // pathEncryptWrite corresponds to PUT/POST gcpkms/encrypt/:key and is
 // used to encrypt the plaintext string using the named key.
 func (b *backend) pathEncryptWrite(ctx context.Context, req *logical.Request, d *framework.FieldData) (*logical.Response, error) {
+	fmt.Println("This is test on 4/13/2020 pathEncryptWrite()")
 	key := d.Get("key").(string)
 	aad := d.Get("additional_authenticated_data").(string)
 	plaintext := d.Get("plaintext").(string)

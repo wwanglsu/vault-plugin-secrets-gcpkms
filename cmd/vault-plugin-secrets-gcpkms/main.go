@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	hclog "github.com/hashicorp/go-hclog"
@@ -11,7 +12,7 @@ import (
 
 func main() {
 	logger := hclog.New(&hclog.LoggerOptions{})
-
+	fmt.Println("This is test on 4/13/2020 main()")
 	defer func() {
 		if r := recover(); r != nil {
 			logger.Error("plugin paniced", "error", r)
