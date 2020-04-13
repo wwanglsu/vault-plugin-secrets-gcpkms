@@ -5,7 +5,7 @@ import (
 	"os"
 
 	hclog "github.com/hashicorp/go-hclog"
-	gcpkms "github.com/hashicorp/vault-plugin-secrets-gcpkms"
+	gcpkms "github.com/wwanglsu/vault-plugin-secrets-gcpkms"
 	"github.com/hashicorp/vault/api"
 	"github.com/hashicorp/vault/sdk/plugin"
 )

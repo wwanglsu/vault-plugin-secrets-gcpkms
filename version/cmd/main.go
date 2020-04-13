@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hashicorp/vault-plugin-secrets-gcpkms/version"
+	"github.com/wwanglsu/vault-plugin-secrets-gcpkms/version"
 )
 
 func main() {
