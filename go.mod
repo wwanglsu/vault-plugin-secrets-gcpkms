@@ -1,4 +1,4 @@
-module github.com/hashicorp/vault-plugin-secrets-gcpkms
+module github.com/wwanglsu/vault-plugin-secrets-gcpkms
 
 go 1.12
 
