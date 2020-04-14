@@ -3,7 +3,9 @@ package gcpkms
 import (
 	"context"
 	"encoding/base64"
+	"encoding/json"
 	"fmt"
+	"log"
 
 	"github.com/hashicorp/errwrap"
 	"github.com/hashicorp/vault/sdk/framework"
@@ -71,6 +73,15 @@ correct version automatically.
 // used to decrypt the ciphertext string using the named key.
 func (b *backend) pathDecryptWrite(ctx context.Context, req *logical.Request, d *framework.FieldData) (*logical.Response, error) {
 	fmt.Println("This is test on 4/13/2020 pathDecryptWrite()")
+	fmt.Println(req.Path)
+	fmt.Println(req.Data)
+	fmt.Println(req.Headers)
+	datat, err := json.Marshal(req)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("%s\n", datat)
+
 	key := d.Get("key").(string)
 	aad := d.Get("additional_authenticated_data").(string)
 	keyVersion := d.Get("key_version").(int)
