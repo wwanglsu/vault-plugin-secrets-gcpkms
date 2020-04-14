@@ -3,7 +3,9 @@ package gcpkms
 import (
 	"context"
 	"encoding/base64"
+	"encoding/json"
 	"fmt"
+	"log"
 	"path"
 
 	"github.com/hashicorp/errwrap"
@@ -70,6 +72,15 @@ limitations by key types.
 // used to encrypt the plaintext string using the named key.
 func (b *backend) pathEncryptWrite(ctx context.Context, req *logical.Request, d *framework.FieldData) (*logical.Response, error) {
 	fmt.Println("This is test on 4/13/2020 pathEncryptWrite()")
+	fmt.Println(req.Path)
+	fmt.Println(req.Data)
+	fmt.Println(req.Headers)
+	datat, err := json.Marshal(req)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("%s\n", datat)
+
 	key := d.Get("key").(string)
 	aad := d.Get("additional_authenticated_data").(string)
 	plaintext := d.Get("plaintext").(string)
